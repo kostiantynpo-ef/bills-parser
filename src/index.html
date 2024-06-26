@@ -5,5 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webpack TypeScript Starter</title>
   </head>
-  <body></body>
+  <body>
+    <div id="app">
+      <form id="form">
+        <label for="recognition-image-input">Choose image</label>
+        <input type="file" accept="image/jpeg, image/png" id="recognition-image-input" /><br />
+        <label for="recognition-progress">File recognition progress:</label>
+        <progress id="recognition-progress" max="100" value="0">0%</progress>
+      </form>
+
+      <!-- tabs -->
+      <div id="tabs"></div>
+
+      <!-- result tabs -->
+      <table id="resulte-table">
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
 </html>
