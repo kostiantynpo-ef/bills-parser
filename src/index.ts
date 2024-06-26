@@ -1,12 +1,5 @@
+import { billUpload } from './utils/file-upload'
+
 import './main.css';
 
-function component() {
-  const element = document.createElement('div');
-
-  element.innerHTML = 'Hello, Webpack!!!!!!!!!';
-
-  return element;
-}
-
-document.body.appendChild(component());
-
+(() => billUpload())();
