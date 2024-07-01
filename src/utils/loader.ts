@@ -1,6 +1,7 @@
+const appElement: HTMLElement = document.getElementById('app');
+
 export const loader = {
   createLoader: () => {
-    const appElement: HTMLElement = document.getElementById('app');
     const loader: HTMLElement = document.createElement('div');
 
     loader.className = 'loader';

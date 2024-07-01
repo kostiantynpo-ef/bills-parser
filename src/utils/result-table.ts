@@ -1,23 +1,14 @@
-import { RecognizeResult } from 'tesseract.js';
-import { insertBillImage } from './insert-bill-image'
-import { getGoodsFromBill } from './goods-parsing';
+const resulteTable: HTMLElement = document.getElementById('content-table');
 
-export const createResultTabe = (blob: Blob, response: RecognizeResult) => {
-  const resulteTable: HTMLElement = document.querySelector('#resulte-table tbody');
-  let goods: string[][] = [];
-
-  insertBillImage(blob);
-  goods = getGoodsFromBill(response);
-
-  for (const item of goods) {
+export const createResultTabe = (data: string[][]) => {
+  for (const position of data) {
     const tr = document.createElement('tr');
 
-    for (const element of item) {
+    for (const item of position) {
       const td = document.createElement('td');
 
       tr.appendChild(td);
-      td.innerText = element;
-
+      td.innerText = item;
     }
 
     resulteTable.appendChild(tr);
