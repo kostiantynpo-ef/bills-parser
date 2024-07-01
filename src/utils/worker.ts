@@ -1,11 +1,11 @@
 import { RecognizeResult, createWorker } from 'tesseract.js';
-import { createResultTabe } from './result-table';
+import { navigationTabs } from './navigation-tabs';
 
 export const worker = async (blob: Blob) => {
   const worker = await createWorker('eng');
   const response: RecognizeResult = await worker.recognize(blob);
 
-  createResultTabe(blob, response);
+  navigationTabs(response);
 
   await worker.terminate();
 };
